@@ -107,6 +107,11 @@ public abstract class WXPayConfig {
         return 10;
     }
     
+    /**
+     * 根据银行获得银行编码
+     * @param bankName
+     * @return
+     */
     public String getBankId(String bankName) {
     	return "";
     }

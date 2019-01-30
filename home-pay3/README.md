@@ -3,20 +3,20 @@
 
 对[微信支付开发者文档](https://pay.weixin.qq.com/wiki/doc/api/index.html)中给出的API进行了封装。
 
-com.github.wxpay.sdk.WXPay类下提供了对应的方法：
+com.home.pay3.WXPayConfig.WXPay类下提供了对应的方法：
 
 |方法名 | 说明 |
 |:-------------:|:-------------:|
-|microPay       | 刷卡支付			|
+|microPay   	 | 刷卡支付			|
 |unifiedOrder   | 统一下单			|
 |orderQuery     | 查询订单			|
 |reverse        | 撤销订单			|
-|closeOrder|关闭订单	|
-|refund|申请退款     	|
-|refundQuery|查询退款	|
-|downloadBill|下载对账单	|
-|report|交易保障	|
-|shortUrl|转换短链接	|
+|closeOrder		 |关闭订单	|
+|refund	       	|申请退款     	|
+|refundQuery	|查询退款	|
+|downloadBill	|下载对账单	|
+|report			|交易保障	|
+|shortUrl		|转换短链接	|
 |authCodeToOpenid|授权码查询openid	|
 
 * 注意:
@@ -34,7 +34,7 @@ com.github.wxpay.sdk.WXPay类下提供了对应的方法：
 ## 示例
 配置类MyConfig:
 ```java
-import com.github.wxpay.sdk.WXPayConfig;
+import com.home.pay3.WXPayConfig.WXPayConfig;
 import java.io.*;
 
 public class MyConfig implements WXPayConfig{
@@ -80,7 +80,7 @@ public class MyConfig implements WXPayConfig{
 统一下单：
 
 ```java
-import com.github.wxpay.sdk.WXPay;
+import com.home.pay3.WXPayConfig.WXPay;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -116,7 +116,7 @@ public class WXPayExample {
 
 订单查询：
 ```java
-import com.github.wxpay.sdk.WXPay;
+import com.home.pay3.WXPayConfig.WXPay;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -145,7 +145,7 @@ public class WXPayExample {
 退款查询：
 
 ```java
-import com.github.wxpay.sdk.WXPay;
+import com.home.pay3.WXPayConfig.WXPay;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -174,7 +174,7 @@ public class WXPayExample {
 下载对账单：
 
 ```java
-import com.github.wxpay.sdk.WXPay;
+import com.home.pay3.WXPayConfig.WXPay;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -205,8 +205,8 @@ public class WXPayExample {
 
 暂时不支持下载压缩格式的对账单，但可以使用该SDK生成请求用的XML数据：
 ```java
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayUtil;
+import com.home.pay3.WXPayConfig.WXPay;
+import com.home.pay3.WXPayConfig.WXPayUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -237,8 +237,8 @@ public class WXPayExample {
 收到支付结果通知时，需要验证签名，可以这样做：
 ```java
 
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayUtil;
+import com.home.pay3.WXPayConfig.WXPay;
+import com.home.pay3.WXPayConfig.WXPayUtil;
 
 import java.util.Map;
 
@@ -268,8 +268,8 @@ public class WXPayExample {
 
 HTTPS请求可选HMAC-SHA256算法和MD5算法签名：
 ```
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayConstants;
+import com.home.pay3.WXPayConfig.WXPay;
+import com.home.pay3.WXPayConfig.WXPayConstants;
 
 public class WXPayExample {
 
@@ -283,8 +283,8 @@ public class WXPayExample {
 
 若需要使用sandbox环境：
 ```
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayConstants;
+import com.home.pay3.WXPayConfig.WXPay;
+import com.home.pay3.WXPayConfig.WXPayConstants;
 
 public class WXPayExample {
 

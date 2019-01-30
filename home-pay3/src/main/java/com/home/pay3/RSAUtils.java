@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -145,7 +146,7 @@ public class RSAUtils {
 					sb.append('\r');
 				}
 			}
-			X509EncodedKeySpec pubX509 = new X509EncodedKeySpec(Base64.getDecoder().decode(sb.toString()));
+			X509EncodedKeySpec pubX509 = new X509EncodedKeySpec(decodeBase64(sb.toString()));
 			KeyFactory keyFactory = KeyFactory.getInstance(keyAlgorithm);
 			PublicKey publicKey = keyFactory.generatePublic(pubX509);
 			return publicKey;
@@ -194,5 +195,17 @@ public class RSAUtils {
 			}
 		}
 	}
+	
+	
+	/***  
+     * decode by Base64  
+     */    
+    public static byte[] decodeBase64(String input) throws Exception{    
+        Class<?> clazz=Class.forName("com.sun.org.apache.xerces.internal.impl.dv.util.Base64");    
+        Method mainMethod= clazz.getMethod("decode", String.class);    
+        mainMethod.setAccessible(true);    
+         Object retObj=mainMethod.invoke(null, input);    
+         return (byte[])retObj;    
+    }  
 
 }
